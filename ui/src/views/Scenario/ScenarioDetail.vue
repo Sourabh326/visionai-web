@@ -463,7 +463,7 @@ export default {
     },
 
     submitCamera() {
-      console.log(this.formData);
+      //console.log(this.formData);
       this.dialog = false;
     },
   },

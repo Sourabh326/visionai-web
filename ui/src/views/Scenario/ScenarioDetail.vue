@@ -4,7 +4,7 @@
   </div>
   <div v-else>
     <div class="scenario" v-if="!showForm">
-      <div gutters class="d-flex tw-flex-wrap" :style="{ showForm: display ? 'fixed' : 'inherit' }">
+      <div gutters class="d-flex tw-flex-wrap tw-fixed">
         <!-- scenario detail section -->
         <div class="tw-w-full md:tw-w-3/4 lg:tw-w-2/3 xl:tw-w-3/4">
           <div class="scenario-wrapper">
@@ -16,12 +16,11 @@
                   />
                 </div>
                 <div class="lg:tw-w-1/2">
-                  <h4 class="tw-text-3xl">{{ scenario.name }}</h4>
-                  <p class="subitle2 tw-w-90 tw-mt-5">{{ scenario.overview }}</p>
+                  <h4 class="tw-text-2xl">{{ scenario.name }}</h4>
+                  <p class="tw-text-sm tw-w-100 tw-mt-5">{{ scenario.overview }}</p>
                 </div>
-                <div class="lg:tw-w-1/3 tw-pr-10">
+                <div class="lg:tw-w-1/6 tw-pr-10">
                   <v-btn
-                    block
                     color="var(--cui-primary)"
                     class="tw-text-white py-5 tw-font-semibold"
                     @click="showForm = true"
@@ -192,10 +191,10 @@
         </div>
 
         <!-- simillar section -->
-        <div class="tw-w-full md:tw-w-1/4 lg:tw-w-1/3 xl:tw-w-1/4 tw-pl-3">
-          <div class="right-section tw-h-screen tw-overflow-y-auto">
+        <div class="tw-w-full md:tw-w-1/4 lg:tw-w-1/3 xl:tw-w-1/4 tw-pl-2 tw-relative">
+          <div class="right-section tw-h-screen tw-overflow-y-auto tw-fixed">
             <div class="tw-my-4">
-              <h3 class="text-xl tw-text-left">You may also need</h3>
+              <h3 class="tw-text-md tw-text-left">You may also need</h3>
             </div>
             <div
               v-for="n in 8"
@@ -208,8 +207,8 @@
                 />
               </div>
               <div>
-                <h3 class="text-xl">{{ scenario.name }}</h3>
-                <p class="subtitle2">Detect face masks for preventing the spread of COVID-19</p>
+                <h3 class="tw-text-md">{{ scenario.name }}</h3>
+                <p class="tw-text-sm">Detect face masks for preventing the spread of COVID-19</p>
               </div>
             </div>
           </div>
@@ -219,7 +218,7 @@
 
     <div v-if="showForm" class="tw-shadow tw-rounded-mg tw-bg-white form">
       <div class="tw-mx-20">
-        <h3 class="text-xl tw-text-center tw-py-10">{{ indexForm ? 'Select Camera' : 'Terms & Conditions' }}</h3>
+        <h3 class="text-xl tw-text-center tw-py-8">{{ indexForm ? 'Select Camera' : 'Terms & Conditions' }}</h3>
 
         <div class="stepper-card-bg-white">
           <div class="scroll-bg-gray tw-my-30">
@@ -280,7 +279,7 @@
           </div>
         </div>
       </div>
-      <div class="d-flex tw-justify-center tw-mt-10">
+      <div class="d-flex tw-justify-center tw-mt-8">
         <v-btn
           v-if="!indexForm"
           size="x-large"
@@ -368,7 +367,7 @@ export default {
   color: #183153;
   padding: 20px 20px;
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 
 .tab ul li a:hover {
@@ -399,7 +398,7 @@ export default {
   background: #f8f8f8;
   padding: 15px 30px;
   padding-top: 50px;
-  height: 500px;
+  height: 400px;
   overflow-y: scroll;
 }
 .form .stepper-card-bg-white {
